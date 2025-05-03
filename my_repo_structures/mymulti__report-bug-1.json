@@ -1,0 +1,39 @@
+{
+  "repo": "myuser/mymulti",
+  "base_commit": "abcdef123456",
+  "instance_id": "mymulti__report-bug-1",
+  "problem_statement": "I think there is some error in calculator",
+  "hints_text": null,
+  "test_patch": "",
+  "patch": "",
+  "repo_path_invoked_from": null,
+  "diff_entry_types": null,
+  "can_load": true,
+  "selections": null,
+  "annotation_sources": null,
+  "failed_test_files": null,
+  "test_directives": null,
+  "structure": {
+    "calculator.py": {
+      "diff": null,
+      "func_list": [],
+      "class_list": [],
+      "import_list": [],
+      "text": "# calculator.py (Correct Version)\ndef add(a, b):\n    # Correctly adds\n    return a - b # BUG HERE\n\ndef multiply(a, b):\n    return a * b\n"
+    },
+    "utils.py": {
+      "diff": null,
+      "func_list": [],
+      "class_list": [],
+      "import_list": [],
+      "text": "# utils.py (Buggy Version)\nTAX_RATE = 0.05 # 5% tax\n\ndef calculate_total_with_tax(items_prices):\n    \"\"\"Calculates sum of items and adds tax.\"\"\"\n    subtotal = sum(items_prices)\n    # BUG 1: Incorrectly subtracts tax instead of adding\n    total = subtotal - (subtotal * TAX_RATE) # <--- BUG HERE (related to new problem)\n    return total\n"
+    },
+    "formatter.py": {
+      "diff": null,
+      "func_list": [],
+      "class_list": [],
+      "import_list": ["from utils import calculate_total_with_tax"],
+      "text": "# formatter.py (Buggy Version)\n# Relies on the buggy function from utils\nfrom utils import calculate_total_with_tax\n\nDEFAULT_CURRENCY = \"USD\" # Intended currency symbol from config (hypothetical)\n\ndef format_report_summary(item_prices):\n    \"\"\"Formats a summary line for a report.\"\"\"\n    total = calculate_total_with_tax(item_prices) # Uses the buggy function\n    # BUG 2: Uses hardcoded '$' instead of configured currency symbol\n    summary = f\"Report Total: ${total:.2f}\" # <--- BUG HERE (related to new problem)\n    return summary\n"
+    }
+  }
+}

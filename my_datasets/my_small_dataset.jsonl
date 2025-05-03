@@ -1,0 +1,1 @@
+{"instance_id": "mymulti__report-bug-1", "repo": "myuser/mymulti", "base_commit": "abcdef123456", "problem_statement": "Generating a summary report results in an incorrect total value. The calculation in the utility module seems off, and the formatter isn't displaying the currency symbol correctly."}

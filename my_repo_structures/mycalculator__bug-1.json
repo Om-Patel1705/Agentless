@@ -1,0 +1,25 @@
+{
+    "repo": "myuser/mycalculator",
+    "base_commit": "abcdef123456",
+    "instance_id": "mycalculator__bug-1",
+    "problem_statement": "The `add` function incorrectly subtracts `b` from `a` instead of performing addition.",
+    "hints_text": null,
+    "test_patch": "",
+    "patch": "--- a/calculator.py\n+++ b/calculator.py\n@@ -1,5 +1,5 @@\n # calculator.py (Buggy Version - BEFORE FIX)\n def add(a, b):\n     # Bug: Incorrectly subtracts instead of adding\n-    return a - b # <--- THE BUG IS HERE\n+    return a + b\n \n def multiply(a, b):\n     return a * b\n",
+    "repo_path_invoked_from": null,
+    "diff_entry_types": null,
+    "can_load": true,
+    "selections": null,
+    "annotation_sources": null,
+    "failed_test_files": null,
+    "test_directives": null,
+    "structure": {
+      "calculator.py": {
+        "diff": null,
+        "func_list": [],
+        "class_list": [],
+        "import_list": [],
+        "text": "# calculator.py (Buggy Version - BEFORE FIX)\ndef add(a, b):\n    # Bug: Incorrectly subtracts instead of adding\n    return a - b # <--- THE BUG IS HERE\n\ndef multiply(a, b):\n    return a * b\n"
+      }
+    }
+  }
