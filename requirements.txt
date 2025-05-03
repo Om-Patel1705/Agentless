@@ -1,0 +1,9 @@
+openai
+anthropic
+pre-commit
+datasets
+tiktoken
+libcst
+llama-index>=0.9.48
+jsonlines
+swebench @ git+https://github.com/princeton-nlp/SWE-bench.git
